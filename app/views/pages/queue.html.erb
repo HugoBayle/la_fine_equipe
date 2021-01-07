@@ -1,4 +1,7 @@
-Queue page
 
 
-<%= link_to "Back", root_path  %>
+<h2>Welcome <%= @user.profile.name %> </h2>
+<p>Our coworking is actually full... Don't worry, you're on a waitinglist !</p>
+<p>Your actual position is : <%= @user.request.position %> </p>
+
+<%= link_to "Back to HomePage", root_path  %>
