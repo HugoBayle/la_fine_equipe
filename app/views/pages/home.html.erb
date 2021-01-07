@@ -1,2 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<%= link_to "Rejoindre notre coworking", new_user_session_path  %> <br>
+
+<%= link_to "Connaitre sa position en file d'attente", queue_path  %> <br>
+
+<%= link_to "Logout",  destroy_user_session_path, method: :delete %>
