@@ -35,6 +35,9 @@ gem 'simple_form'
 # Authentification gem
 gem 'devise'
 
+# Rails forms. Setup with bootstrap
+gem 'simple_form'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
