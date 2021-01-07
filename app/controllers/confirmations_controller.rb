@@ -3,6 +3,6 @@ class ConfirmationsController < Devise::ConfirmationsController
   private
     def after_confirmation_path_for(resource_name, resource)
       sign_in(resource)
-      queue_path
+      new_profile_path
     end
 end
