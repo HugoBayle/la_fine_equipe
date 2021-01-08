@@ -21,10 +21,12 @@ private
     if Request.where("position > 0") != []
       self.request.position = last_known_position + 1
       self.request.status = "confirmed"
+      self.request.last_check = Time.now
       self.request.save
     else
       self.request.position = 1
       self.request.status = "confirmed"
+      self.request.last_check = Time.now
       self.request.save
     end
   end
