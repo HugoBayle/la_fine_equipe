@@ -23,8 +23,8 @@ class Request < ApplicationRecord
 
   def accept!
     self.status = "accepted"
+    Request.where("#{self.position} < position").update_all("position = position - 1")
     self.position = nil
     self.save
-    Request.where("position > 0").update_all("position = position - 1")
   end
 end
