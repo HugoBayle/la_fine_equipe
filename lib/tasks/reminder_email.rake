@@ -1,6 +1,6 @@
 namespace :reminder_email do
   desc "Send email to everyone after 3 months of waiting"
-  task :send_reminder do
+  task send_reminder: :environment do
     requests_confirmed = Request.where(status: "confirmed")
     requests_confirmed.each do |request|
       deadline = request.last_check + 3.months
@@ -15,7 +15,7 @@ namespace :reminder_email do
   end
 
   desc "If the user hasn't follow the link of the reminder email, his request goes to expired"
-  task :check_if_email_read do
+  task check_if_email_read: :environment do
     requests_mail_sent = Request.where(status: "confirmed").where.not(date_mail_sent: nil)
     requests_mail_sent.each do |request|
       deadline_email = request.date_mail_sent + 1.day
