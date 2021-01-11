@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:new, :create]
 
-  get "/queue", to: 'pages#queue'
+  get "/queue", to: 'requests#queue'
   get "/confirmation_queue", to: 'requests#confirmation_queue'
 
   root to: 'pages#home'

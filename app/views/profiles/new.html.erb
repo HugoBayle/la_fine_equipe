@@ -1,8 +1,16 @@
-<H1>Let us know more about you 🙂</H1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 offset-sm-4">
+      <div class="background-form">
+        <h2 class="text-center">Dis nous en plus sur toi 🙂</h2>
+        <%= simple_form_for(@profile) do |f| %>
+          <%= f.input :name, label: 'Votre Nom et Prénom' %>
+          <%= f.input :phone_number, label: 'Votre téléphone', placeholder: '0622348798' %>
+          <%= f.input :bio, label: 'Qui êtes vous ?' %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= simple_form_for(@profile) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :phone_number %>
-  <%= f.input :bio %>
-  <%= f.submit %>
-<% end %>
