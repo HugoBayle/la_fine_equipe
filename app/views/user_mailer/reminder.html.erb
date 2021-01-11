@@ -1,6 +1,9 @@
 <h1>Bonjour <%= @user.profile.name %> 😃</h1>
 
 <p>Vous êtes en file d'attente pour rejoindre notre Coworking depuis maintenant 3 mois...</p>
+<p>Vous êtes actuellement à la place N°<%= @user.request.position %></p>
 
-<p>Si vous souhaitez maintenir votre candidature, merci de cliquer sur le lien suivant.</p>
+<p>Si vous souhaitez maintenir votre candidature, merci de cliquer sur le lien suivant:</p>
 <%= link_to "Maintenir son inscription", confirmation_queue_url(user: @user)  %>
+
+<p>La Fine Équipe</p>
