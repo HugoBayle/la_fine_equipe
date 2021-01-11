@@ -1,7 +1,17 @@
-
-
-<h2>Welcome <%= @user.profile.name %> </h2>
-<p>Our coworking is actually full... Don't worry, you're on a waitinglist !</p>
-<p>Your actual position is : <%= @user.request.position %> </p>
-
-<%= link_to "Back to HomePage", root_path  %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 offset-sm-4">
+      <div class="queue-card text-center">
+        <% if @user.request.status == "confirmed" %>
+          <h2>Bonjour <%= @user.profile.name %> !</h2>
+          <p>Victime de son succès, notre coworking est actuellement plein...</p>
+          <p>Tu es en file d'attente et est actuellement en position N°<%= @user.request.position %> </p>
+        <% else %>
+          <h2>Bonjour <%= @user.profile.name %> !</h2>
+          <p>L'attente est enfin terminée, nous avons une place pour toi 🙂</p>
+          <p>A très vite au coworking !! </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

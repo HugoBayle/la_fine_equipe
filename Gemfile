@@ -35,6 +35,8 @@ gem 'simple_form'
 # Authentification gem
 gem 'devise'
 
+gem 'bootstrap', '~> 4.0.0'
+
 # Rails forms. Setup with bootstrap
 gem 'simple_form'
 
