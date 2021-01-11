@@ -1,5 +1,12 @@
-<h1>Thank you !!</h1>
-
-<p>Your registration is still on the waiting list</p> <br>
-<p>Your actual position is: <%= @user.request.position %></p> <br>
-<p>See you soon !</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 offset-sm-4">
+      <div class="queue-card text-center">
+          <h2>Merci <%= @user.profile.name %> !</h2>
+          <p>Ta demande d'inscription est maintenue 🙂</p>
+          <p>Ta position actuelle est: <%= @user.request.position %></p>
+          <p>A très vite chez La fine Equipe !! </p>
+      </div>
+    </div>
+  </div>
+</div>

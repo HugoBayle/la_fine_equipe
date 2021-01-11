@@ -28,5 +28,6 @@ class Request < ApplicationRecord
     end
     self.position = nil
     self.save
+    UserMailer.welcome(self.user).deliver_now
   end
 end
