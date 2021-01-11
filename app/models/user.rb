@@ -32,7 +32,7 @@ private
   end
 
   def last_known_position
-    requests_positions = Request.where("position > 0").map { |request| request.position }
+    requests_positions = Request.where("position > 0").order("position ASC").map { |request| request.position }
     last_position = requests_positions.last
   end
 
