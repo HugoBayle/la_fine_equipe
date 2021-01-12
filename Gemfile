@@ -40,6 +40,10 @@ gem 'bootstrap', '~> 4.0.0'
 # Rails forms. Setup with bootstrap
 gem 'simple_form'
 
+# Admin Interface
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
