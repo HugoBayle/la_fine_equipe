@@ -1,4 +1,4 @@
-require 'faker'
+
 
 
 puts "--- Clearning DB ---"
@@ -12,6 +12,7 @@ admin.save!
 puts "--- Ok ! ---"
 
 if Rails.env.development?
+  require 'faker'
   puts "--- Creating 20 users ---"
   20.times do
     if Request.where("position > 0") != []
