@@ -7,7 +7,6 @@ index do
     column :confirmed_at
     column :created_at
     column :admin
-    actions only: :delete
   end
 
   filter :email

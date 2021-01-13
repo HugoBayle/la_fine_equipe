@@ -34,8 +34,11 @@ class Request < ApplicationRecord
   def move_to_position(new_position)
     requests_positions = Request.where("position > 0").order("position ASC").map { |request| request.position }
     last_position = requests_positions.last
+    # if new position < 1
+    if new_position < 1
+      puts "Please enter a position > 0"
     # if new position 1
-    if new_position == 1
+    elsif new_position == 1
       requests_go_up = Request.confirmed.where("position < #{self.position}")
       requests_go_up.each do |request|
         request.position = request.position + 1
