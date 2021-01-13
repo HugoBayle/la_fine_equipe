@@ -4,9 +4,9 @@
       <div class="background-form">
         <h2 class="text-center">Dis nous en plus sur toi 🙂</h2>
         <%= simple_form_for(@profile) do |f| %>
-          <%= f.input :name, label: 'Ton Nom et Prénom', required: false %>
-          <%= f.input :phone_number, label: 'Ton téléphone', placeholder: '0622348798', required: false %>
-          <%= f.input :bio, label: 'Qui es tu ?', required: false %>
+          <%= f.input :name, label: 'Ton Nom et Prénom', required: false, error: 'Ce champ est requis' %>
+          <%= f.input :phone_number, label: 'Ton téléphone', placeholder: '0622348798', required: false, error: 'Ce champ est requis. Vérifiez également son format.' %>
+          <%= f.input :bio, label: 'Qui es tu ?', required: false, error: 'Ce champ est requis' %>
           <%= f.submit 'Soumettre', class: "btn btn-primary" %>
         <% end %>
       </div>

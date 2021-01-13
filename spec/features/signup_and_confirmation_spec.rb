@@ -30,7 +30,7 @@ describe 'User registration' do
   end
 
   it "shows notif: confirmation email has been sent" do
-    expect(page).to have_css(".alert", :text => "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.")
+    expect(page).to have_css(".alert", :text => "Un message contenant un lien de confirmation a été envoyé à votre adresse email. Ouvrez ce lien pour activer votre compte.")
   end
 
   it "user open email and follow the confirmation link" do
@@ -39,7 +39,7 @@ describe 'User registration' do
     assert_equal User.find_by(email: user_email).confirmation_token, token
     expect(mail.subject) == "Confirmation instructions"
     visit "users/confirmation?confirmation_token=#{token}"
-    expect(page).to have_css(".alert", :text => "Your email address has been successfully confirmed.")
+    expect(page).to have_css(".alert", :text => "Votre compte a été validé.")
   end
 
   it "change status request to confirmed, and position is attributed" do
