@@ -36,7 +36,7 @@ describe 'User registration' do
   it "user open email and follow the confirmation link" do
     mail = ActionMailer::Base.deliveries[0]
     token = mail.body.decoded.match(/confirmation_token=([^"]+)/)[1]
-    assert_equal User.find_by(email: "test@test.fr").confirmation_token, token
+    assert_equal User.find_by(email: user_email).confirmation_token, token
     expect(mail.subject) == "Confirmation instructions"
     visit "users/confirmation?confirmation_token=#{token}"
     expect(page).to have_css(".alert", :text => "Your email address has been successfully confirmed.")
@@ -48,3 +48,4 @@ describe 'User registration' do
     expect(user.request.position) != nil
   end
 end
+

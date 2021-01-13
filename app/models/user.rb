@@ -10,8 +10,7 @@ class User < ApplicationRecord
   after_create :generate_request
   before_update :set_position_to_request, if: :confirmed_at_changed?
 
-
-private
+  private
 
   def generate_request
     Request.create(user: self)
@@ -35,5 +34,4 @@ private
     requests_positions = Request.where("position > 0").order("position ASC").map { |request| request.position }
     last_position = requests_positions.last
   end
-
 end
